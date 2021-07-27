@@ -3,7 +3,7 @@ from flask_bcrypt import Bcrypt
 
 def create_app():
     app = Flask("notes")
-    app.config.from_mapping(DATABASE='note')
+    app.config.from_mapping(DATABASE='notes')
 
     from . import db
     db.init_app(app)
