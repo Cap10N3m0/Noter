@@ -10,5 +10,8 @@ def create_app():
 
     from . import account
     app.register_blueprint(account.bp)
-    
+
+    #from . import notes
+    #app.register_blueprint(notes.bp)
+
     return app
