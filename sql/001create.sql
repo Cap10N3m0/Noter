@@ -18,6 +18,7 @@ create table tags(
 
 create table notes(
     id serial primary key,
+    title text,
     note text,
     created_on date
 );

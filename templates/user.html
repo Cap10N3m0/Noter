@@ -1,0 +1,25 @@
+{% extends "base_note.html" %}
+{%block body %}
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th> # </th>
+                            <th> title </th>
+                            <th> note </th>
+                            <th> date </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                
+                        {% for id, title, date, note in nd%}
+                        <tr>
+                            <!--<td> <a href="{{url_for('jobs.jobdetail', n_id=id)}}">{{id}} </a></td><-->
+                            <td>{{id}}</td>
+                            <td> {{title}} </td>
+                            <td> {{note}} </td>
+                            <td> {{date}} </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+{% endblock %}
