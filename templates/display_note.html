@@ -1,0 +1,15 @@
+{% extends "base_note.html" %}
+{%block body %}
+
+<h3 style="text-align: center;">{{title}}</h3>
+<br/>
+Tags:
+
+{% for tag in tags%}
+<span class="badge bg-dark">{{tag}}</span>
+{% endfor %}
+
+<hr/>
+<p style="word-break: break-all;">{{note}}</p>
+<a class="btn btn-primary" style="position: absolute;bottom:10px" href="{{url_for('notes_url.edit_note',n_id=id)}}">Edit Note</a>
+{% endblock %}
