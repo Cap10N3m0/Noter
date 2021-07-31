@@ -10,6 +10,6 @@ Tags:
 {% endfor %}
 
 <hr/>
-<p style="word-break: break-all;">{{note}}</p>
+<p class='dp_note'>{{note}}</p>
 <a class="btn btn-primary" style="position: absolute;bottom:10px" href="{{url_for('notes_url.edit_note',n_id=id)}}">Edit Note</a>
 {% endblock %}

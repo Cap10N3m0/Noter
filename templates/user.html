@@ -12,11 +12,11 @@
                 
                         {% for id, title, date, note in nd%}
                         <tr>
-                            <td><a href="{{url_for('notes_url.display',n_id=id)}}" style="color: black; text-decoration: none;"> 
+                            <td><a href="{{url_for('notes_url.display',n_id=id)}}" class="atable"> 
                                 {{title}} </a></td>
-                            <td><a href="{{url_for('notes_url.display',n_id=id)}}" style="color: black; text-decoration: none;">
+                            <td><a href="{{url_for('notes_url.display',n_id=id)}}" class="atable">
                                  {{note}} </a></td>
-                            <td><a href="{{url_for('notes_url.display',n_id=id)}}" style="color: black; text-decoration: none;">
+                            <td><a href="{{url_for('notes_url.display',n_id=id)}}" class="atable">
                                  {{date}} </a></td>
                         </tr>
                         {% endfor %}

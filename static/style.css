@@ -1,0 +1,27 @@
+h6{
+    color: red;
+    text-align: center; 
+    position:relative;
+    left:-100px;
+}
+
+p{
+    text-align: center;
+    position:relative;
+    left:-100px
+}
+
+#button{
+    text-align: center;
+    position:relative;
+    left:100px;
+}
+
+h3{
+    text-align: center;
+}
+
+.ip{
+    position:relative; 
+    left:-30px;
+}

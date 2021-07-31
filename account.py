@@ -14,6 +14,7 @@ def login():
         cursor = conn.cursor()
         cursor.execute(f"SELECT passwords,id FROM users WHERE user_name = \'{user_name}\';")
         detail = cursor.fetchone()
+        conn.commit()
         if not detail:
             return render_template("login.html",info='Invalid User')            
 
@@ -43,7 +44,11 @@ def register():
         if pd == pd_trial:
             hased_pd = bcrypt.generate_password_hash(pd).decode('utf-8')
             cursor = conn.cursor()
-            cursor.execute("INSERT INTO users (user_name, passwords) VALUES (%s,%s);", (user_name, hased_pd))
+            try:
+                cursor.execute("INSERT INTO users (user_name, passwords) VALUES (%s,%s);", (user_name, hased_pd))
+            except:
+                conn.commit()
+                return render_template("register.html", info='Username already taken')
             conn.commit()
             return redirect(url_for('notes.login'),302)
         

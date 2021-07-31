@@ -12,7 +12,7 @@ def notes_u_id():
     if 'u_id' in session:
         cursor.execute(f'''SELECT n.id, n.title, n.created_on, SUBSTR(n.note,1,50)
          FROM notes n, users u, link_users lu 
-         WHERE n.id = lu.n_id AND u.id = lu.u_id AND u.id = {session['u_id']} ORDER BY n.created_on DESC ;''')
+         WHERE n.id = lu.n_id AND u.id = lu.u_id AND u.id = {session['u_id']} ORDER BY n.created_on DESC;''')
         nd = cursor.fetchall()
         conn.commit()
         if not nd:
@@ -29,7 +29,6 @@ def logout():
 
 def lu(title,note,created_on,u_id):
     conn = db.get_db()
-    cursor = conn.cursor()
     cursor = conn.cursor()
     cursor.execute(f'''SELECT id FROM notes WHERE title = \'{title}\'
     AND note = \'{note}\' AND created_on = \'{created_on}\';''')
@@ -138,7 +137,7 @@ def search():
                 WHERE n.id = lu.n_id AND u.id = lu.u_id AND u.id = %s AND n.note LIKE %s;''', (session['u_id'], note))
                 details = cursor.fetchall()
                 print(details)
-
+        conn.commit()
         return render_template('search.html', details=details)
 
     return redirect(url_for('notes.login'), 302)

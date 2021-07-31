@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div style="width:40%; margin:25px auto">
-                    <h3 style="text-align: center;">Login</h3>
+                    <h3>Login</h3>
                     <form method="POST" action="/" style="text-align: center;">
                         <div class="form-group">
                             <label>Username : </label>
@@ -14,12 +14,13 @@
                             <label>Password : </label>
                             <input type="password" name="Password" class="form_control" autofocus required/>
                         </div>
-                        <div class="form-group" style="text-align: center; position:relative; left:100px;">
+                        <div class="form-group" id="button">
                             <input type="submit" class="btn btn-primary" value="Sign In">
                         </div>
                     </form>
-                        <p style="text-align: center; position:relative;left:-100px">New Here? <a href='/register'>Sign Up</a></p>
-                        <h5 style="text-align: center; position:relative;left:-100px">{{info}}</h5>
+                        <p>New Here? <a href='/register'>Sign Up</a></p>
+                        <br>
+                        <h6>{{info}}</h6>
                 </div>
             </div>
         </div>

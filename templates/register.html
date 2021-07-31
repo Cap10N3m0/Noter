@@ -3,7 +3,7 @@
             <div class="container">
                 <div class="row">
                     <div style="width:40%; margin:25px auto">
-                        <h3 style="text-align: center;">Register</h3>
+                        <h3>Register</h3>
                         <form method="POST" action="/register" style="text-align: center;">
                             <div class="form-group">
                                 <label>Username : </label>
@@ -16,15 +16,15 @@
                             </div>
                             <br/>
                             <div class="form-group">
-                            <label style="position:relative; left:-30px;">Re-enter Password : </label>
-                            <input style="position:relative; left:-30px;" type="password" name="PasswordTrial" class="form_control" autofocus required/>
+                            <label class='ip'>Re-enter Password : </label>
+                            <input class='ip' type="password" name="PasswordTrial" class="form_control" autofocus required/>
                             </div>
                     </div>
                     <div class="form-group" style="text-align: center; position:relative; left:100px;">
                         <input type="submit" class="btn btn-primary" value="Register">
                     </div>
                     </form>
-                    <h5 style="text-align: center; position:relative;left:-100px">{{info}}</h5>
+                    <h6>{{info}}</h6>
                 </div>
             </div>
 {% endblock %}
